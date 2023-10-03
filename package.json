@@ -1,5 +1,5 @@
 {
-  "name": "@tradeshift/actions-docker",
+  "name": "@theros-org/actions-docker",
   "version": "0.0.0",
   "private": true,
   "description": "Github actions for working w/ docker images",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tradeshift/actions-docker.git"
+    "url": "git+https://github.com/Theros-org/actions-docker.git"
   },
   "keywords": [
     "actions",

@@ -32,12 +32,12 @@ jobs:
       - name: Set up commit signing w/ GPG
         if: ${{ steps.diff.outcome != 'success' }}
         id: configure
-        uses: tradeshift/actions-git/configure-from-gpg-key@v1
+        uses: theros-org/actions-git/configure-from-gpg-key@v1
         with:
-          gpg-key: ${{ secrets.TRADESHIFTCI_GPG_KEY }}
+          gpg-key: ${{ secrets.THEROSCI_GPG_KEY }}
       
       - name: PR build changes if needed
-        uses: tradeshift/create-pull-request@v4
+        uses: theros-org/create-pull-request@v4
         if: ${{ steps.diff.outcome != 'success' }}
         with:
           commit-message: "build: update dist folder"
@@ -63,7 +63,7 @@ jobs:
     if: ${{ needs.build.outputs.needs-update != 'true' }}
     steps:
       - uses: actions/checkout@v3
-      - uses: tradeshift/actions-semantic-release@v1
+      - uses: theros-org/actions-semantic-release@v1
         id: semantic-release
         with:
           check_name: Semantic release

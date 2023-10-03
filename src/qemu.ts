@@ -7,7 +7,7 @@ export async function setup(registry: string): Promise<void> {
     'run',
     '--privileged',
     '--rm',
-    `${registry}/tradeshift-base/tonistiigi/binfmt:qemu-v6.2.0`,
+    `${registry}/theros-base/tonistiigi/binfmt:qemu-v6.2.0`,
     '--install',
     'all'
   ]);
