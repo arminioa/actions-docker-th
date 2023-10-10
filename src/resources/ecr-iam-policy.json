@@ -18,38 +18,9 @@
       ],
       "Condition": {
         "StringLike": {
-          "aws:PrincipalOrgID": "o-u7wq0k1pyq"
+          "aws:PrincipalOrgID": "o-mt7csvo0g4"
         }
       }
-    },
-    {
-      "Sid": "AllowCrossAccountPushPull",
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": [
-          "arn:aws:iam::694518486591:role/ts_all_base_administrator_role",
-          "arn:aws:iam::694518486591:role/ts_all_base_eks-deployer_role",
-          "arn:aws:iam::933138817065:role/ts_all_card_eks-deployer_role",
-          "arn:aws:iam::615254691163:role/ts_all_test_ci-it-slave_role",
-          "arn:aws:iam::615254691163:role/ts_all_test_ci-components-slave_role",
-          "arn:aws:iam::408856936053:role/ts_all_prod_eks-deployer_role"
-        ]
-      },
-      "Action": [
-        "ecr:BatchCheckLayerAvailability",
-        "ecr:BatchGetImage",
-        "ecr:CompleteLayerUpload",
-        "ecr:DescribeImageScanFindings",
-        "ecr:DescribeImages",
-        "ecr:DescribeRepositories",
-        "ecr:GetAuthorizationToken",
-        "ecr:GetDownloadUrlForLayer",
-        "ecr:GetRepositoryPolicy",
-        "ecr:InitiateLayerUpload",
-        "ecr:ListImages",
-        "ecr:PutImage",
-        "ecr:UploadLayerPart"
-      ]
     }
   ]
 }

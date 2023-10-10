@@ -65,7 +65,7 @@ export async function getInputs(): Promise<Inputs> {
 }
 
 function defaultRepository(): string {
-  return `eu.gcr.io/tradeshift-base/${context.repo.repo}`;
+  return `eu.gcr.io/theros-base/${context.repo.repo}`;
 }
 
 async function getInputList(

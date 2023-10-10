@@ -1,6 +1,6 @@
 name: "docker action"
 description: "does auth, build and push"
-author: "Tradeshift"
+author: "Theros"
 inputs:
   build-args:
     required: false
@@ -44,7 +44,7 @@ inputs:
     required: false
     description: >
       The repository where default tags will be pushed. If not specified this
-      will default to eu.gcr.io/tradeshift-base/<repo-name>
+      will default to 624762752008.dkr.ecr.eu-west-1.amazonaws.com/theros-base/<repo-name>
   registries:
     required: false
     description: >

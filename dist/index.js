@@ -800,7 +800,7 @@ function getInputs() {
 }
 exports.getInputs = getInputs;
 function defaultRepository() {
-    return `eu.gcr.io/tradeshift-base/${github_1.context.repo.repo}`;
+    return `eu.gcr.io/theros-base/${github_1.context.repo.repo}`;
 }
 function getInputList(name, ignoreComma = false) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -972,7 +972,7 @@ function setup(registry) {
             'run',
             '--privileged',
             '--rm',
-            `${registry}/tradeshift-base/tonistiigi/binfmt:qemu-v6.2.0`,
+            `${registry}/theros-base/tonistiigi/binfmt:qemu-v6.2.0`,
             '--install',
             'all'
         ]);
@@ -70449,7 +70449,7 @@ module.exports = require("zlib");
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"Version":"2012-10-17","Statement":[{"Sid":"OrganizationReadOnlyAccess","Effect":"Allow","Principal":"*","Action":["ecr:BatchCheckLayerAvailability","ecr:BatchGetImage","ecr:DescribeImageScanFindings","ecr:DescribeImages","ecr:DescribeRepositories","ecr:GetAuthorizationToken","ecr:GetDownloadUrlForLayer","ecr:GetRepositoryPolicy","ecr:ListImages"],"Condition":{"StringLike":{"aws:PrincipalOrgID":"o-u7wq0k1pyq"}}},{"Sid":"AllowCrossAccountPushPull","Effect":"Allow","Principal":{"AWS":["arn:aws:iam::694518486591:role/ts_all_base_administrator_role","arn:aws:iam::694518486591:role/ts_all_base_eks-deployer_role","arn:aws:iam::933138817065:role/ts_all_card_eks-deployer_role","arn:aws:iam::615254691163:role/ts_all_test_ci-it-slave_role","arn:aws:iam::615254691163:role/ts_all_test_ci-components-slave_role","arn:aws:iam::408856936053:role/ts_all_prod_eks-deployer_role"]},"Action":["ecr:BatchCheckLayerAvailability","ecr:BatchGetImage","ecr:CompleteLayerUpload","ecr:DescribeImageScanFindings","ecr:DescribeImages","ecr:DescribeRepositories","ecr:GetAuthorizationToken","ecr:GetDownloadUrlForLayer","ecr:GetRepositoryPolicy","ecr:InitiateLayerUpload","ecr:ListImages","ecr:PutImage","ecr:UploadLayerPart"]}]}');
+module.exports = JSON.parse('{"Version":"2012-10-17","Statement":[{"Sid":"OrganizationReadOnlyAccess","Effect":"Allow","Principal":"*","Action":["ecr:BatchCheckLayerAvailability","ecr:BatchGetImage","ecr:DescribeImageScanFindings","ecr:DescribeImages","ecr:DescribeRepositories","ecr:GetAuthorizationToken","ecr:GetDownloadUrlForLayer","ecr:GetRepositoryPolicy","ecr:ListImages"],"Condition":{"StringLike":{"aws:PrincipalOrgID":"o-mt7csvo0g4"}}}]}');
 
 /***/ }),
 

@@ -1,5 +1,8 @@
 name: "pr"
-on: [pull_request]
+on:
+  push:
+    branches: ["master"]
+  pull_request:
 
 jobs:
   build:
@@ -39,8 +42,9 @@ jobs:
         uses: ./
         with:
           file: __tests__/Dockerfile
-          password: ${{ secrets.GCLOUD_SERVICE_ACCOUNT_KEY_NOBASE64 }}
-          repository: eu.gcr.io/tradeshift-base/actions-docker
+          repository: 624762752008.dkr.ecr.eu-west-1.amazonaws.com/theros-base/actions-docker
+          aws-access-key-id: ${{ secrets.ECR_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.ECR_AWS_SECRET_ACCESS_KEY }}
 
       - name: Check that push worked
         run: |
@@ -59,10 +63,11 @@ jobs:
         with:
           file: __tests__/Dockerfile
           skip-default-tag: true
-          password: ${{ secrets.GCLOUD_SERVICE_ACCOUNT_KEY_NOBASE64 }}
-          repository: eu.gcr.io/tradeshift-base/actions-docker-custom
+          repository: 624762752008.dkr.ecr.eu-west-1.amazonaws.com/theros-base/actions-docker-custom
+          aws-access-key-id: ${{ secrets.ECR_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.ECR_AWS_SECRET_ACCESS_KEY }}
           tags: |
-            eu.gcr.io/tradeshift-base/actions-docker-custom:my-tag-${{ github.event.pull_request.head.sha }}
+            624762752008.dkr.ecr.eu-west-1.amazonaws.com/theros-base/actions-docker-custom:my-tag-${{ github.event.pull_request.head.sha }}
 
       - name: Check that push worked
         run: |
@@ -70,7 +75,7 @@ jobs:
 
       - name: Check that skip works
         run: |
-          if docker pull eu.gcr.io/tradeshift-base/actions-docker-custom:${{ github.event.pull_request.head.sha }}; then
+          if docker pull 624762752008.dkr.ecr.eu-west-1.amazonaws.com/theros-base/actions-docker-custom:${{ github.event.pull_request.head.sha }}; then
             echo "Tag found while expected to be missing";
             exit 1;
           fi;
