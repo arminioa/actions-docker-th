@@ -15,7 +15,7 @@ The following are a few different usage examples
 
 ### A dockerfile in the root of the repo
 
-The most common usecase is to build a single dockerfile in the root of the
+The most common use case is to build a single dockerfile in the root of the
 repo. All that you need to do in that case is this.
 
 ```yaml
